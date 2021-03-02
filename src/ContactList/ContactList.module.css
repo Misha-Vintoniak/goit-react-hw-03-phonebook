@@ -1,0 +1,20 @@
+ul {
+  padding: 10px;
+  margin: 0;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}
+.button {
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #ededed;
+  color: black;
+}

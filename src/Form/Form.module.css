@@ -1,0 +1,11 @@
+p {
+  margin: 5px 0;
+}
+input {
+  padding: 5px;
+}
+button {
+  padding: 5px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
