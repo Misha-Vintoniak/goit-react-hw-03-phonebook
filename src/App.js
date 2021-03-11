@@ -1,4 +1,5 @@
 import { Component } from 'react';
+
 import Form from './Form/Form';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
@@ -46,8 +47,20 @@ class App extends Component {
     this.setState(({ contacts }) => ({
       contacts: contacts.filter(contact => contact.id !== id),
     }));
-
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parseContatcts = JSON.parse(contacts);
+    if (parseContatcts) {
+      this.setState({ contacts: parseContatcts });
+    }
+    console.log('component DID mounnt');
+  }
+  componentDidUpdate() {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    console.log('component DID Update');
+  }
   render() {
+    console.log('render');
     const { filter } = this.state;
     const visibleContacts = this.getVisibleContacts();
 
